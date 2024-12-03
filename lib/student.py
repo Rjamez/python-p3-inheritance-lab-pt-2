@@ -1,5 +1,32 @@
-class Student:
-    pass
+# Define the Student class  
+class Student:  
+    def hello(self):  
+        print("Hey there! I'm so excited to learn stuff.")  
+    
+    def raise_hand(self):  
+        print("Pick me!")  
+        
+# Define the ChattyStudent class that inherits from Student  
+class ChattyStudent(Student):  
+    def hello(self):  
+        # Call the parent class's hello method  
+        super().hello()  
+        # Add additional chatty response  
+        print("How are you doing today? I'm okay, but I'm kind of tired. Did you watch The Walking Dead last night? You didn't?! Oh man, it was so crazy! What, you don't want any spoilers? Okay well let me just tell you who died...")  
+        
+    def raise_hand(self):  
+        # Call the parent class's raise_hand method 10 times  
+        for _ in range(10):  
+            super().raise_hand()  
 
-class ChattyStudent(Student):
-    pass
+# Example usage:  
+# Create an instance of Student and ChattyStudent  
+student = Student()  
+chatty_student = ChattyStudent()  
+
+# Call methods to see the output  
+student.hello()           # Outputs the hello message from Student  
+student.raise_hand()      # Outputs "Pick me!"  
+
+chatty_student.hello()    # Outputs the hello message and a chatty response  
+chatty_student.raise_hand() # Outputs "Pick me!" ten times
